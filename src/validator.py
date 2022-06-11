@@ -4,7 +4,7 @@ from exceptions import ValidationException
 from datetime import datetime
 
 
-def validate_long_time(element):
+def validate_date(element):
     if type(element) != str:
         raise ValidationException(
             'Переданный аргумент имеет неверный тип, ожидается строка')
@@ -84,4 +84,4 @@ def validate_ShopUnitImport(shop_unit_dict):
     except Exception as e:
         raise ValidationException('Поле price - ' + str(e))
 
-    return ShopUnit(id, name, date, parentId, type, price, children)
+    return ShopUnitImport(id, name, parentId, type, price)
